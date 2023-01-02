@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(158, 134, 55, 0.733);
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 200px auto;
+    text-align: center;
+    background-color: rgba(172, 172, 172, 0.897);
+    padding-bottom: 8px;
+}
+
+form {
+    display: flex;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 48px;
+}
+
+input, button {
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 5px 20px;
+    margin-right: 16px;
+    background-color: rgba(206, 182, 102, 0.733);
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    height: 25px;
+    padding: 1px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: rgba(206, 182, 102, 0.733);
+    background: black;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+ol {
+    max-width: 260px;
+    margin: 10px auto;
+}
+
+li {
+    border-bottom: 2px solid rgba(206, 182, 102, 0.733);
+}
+
+p {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+::marker {
+    font-weight: bold;
+    font-style: italic;
+}
