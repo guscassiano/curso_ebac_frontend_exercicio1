@@ -1,0 +1,14 @@
+@use 'font';
+
+body{
+    margin: font.$margin
+}
+header {
+    background-color: font.$fontColor;
+    padding: font.$padding;
+    text-align: center;
+}
+
+img {
+    width: font.$img;
+}
