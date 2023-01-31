@@ -1,0 +1,24 @@
+@use 'base.scss';
+@use 'layout.scss';
+
+.produto {/* bloco */
+
+    &__imagem { /* elemento */
+        width: 100%;
+
+        &--destaque { /* modificador */
+            border: 2px solid gold;
+            padding: 8px;
+            background-color: #ffff42;
+        }
+    }
+
+    &__nome { /* elemento */
+        font-size: 1.2em;
+        margin: 8px 0;
+    }
+
+    &__descricao { /* elemento */
+        color: gray;
+    }
+} 
