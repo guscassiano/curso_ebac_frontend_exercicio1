@@ -50,10 +50,10 @@ const cliente3 = new CartaoComJuros("Galaxy S23")
 cliente1.formaPagamento()
 console.log(`\nÉ possível pagar seu ${cliente1.produto} à vista com 10% de desconto - R$${cliente1.getPagamento()}\n`)
 
-cliente1.formaPagamento()
+cliente2.formaPagamento()
 console.log(`\nÉ possível parcelar seu ${cliente2.produto} em até 6x sem Juros - 6x R$${cliente2.getPagamento()}\n`)
 
-cliente1.formaPagamento()
+cliente3.formaPagamento()
 console.log(`\nÉ possível parcelar seu ${cliente3.produto} em até 12x com Juros - 12x R$${cliente3.getPagamento()}\n`)
 
 
