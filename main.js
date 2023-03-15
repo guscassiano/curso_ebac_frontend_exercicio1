@@ -1,60 +1,59 @@
-
-function Celular (produto) {
-    this.produto = produto
+//Herança
+function Marca(marca){
+    this.marca = marca
 }
 
-function Eletrônico (produto, pagamento) {
-    this.produto = produto
-    let _pagamento = pagamento
+//Classe
+function Veiculo(marca, modelo, conjuntoPneus) {  
+    this.modelo = modelo
+    let _conjuntoPneus = conjuntoPneus
 
-    this.getPagamento = function () {
-        return _pagamento
+    this.getPneus = function () {
+        return _conjuntoPneus
     }
 
-    this.setPagamento = function (valor) {
+    this.setPneus = function (valor) {
         if (typeof valor == "number")
-            _pagamento = valor.toFixed(2)
+        _conjuntoPneus = valor
     }
 
-    this.formaPagamento = function() {
-        const novoPagamento = _pagamento
-        _pagamento = novoPagamento
+    this.totalPneus = function() {
+        const novaconjuntoPneus = _conjuntoPneus
+        _conjuntoPneus = novaconjuntoPneus
     }
 
-    Celular.call(this, produto)
+    Marca.call(this, marca)
 }
 
-function AVista (produto) {
-    Eletrônico.call(this, produto, 12000.00)
-    const novoPagamento = this.getPagamento() * 0.9
-    this.setPagamento(novoPagamento)
+//Herança
+function Carro(marca, modelo, conjuntoPneus) {                     
+    Veiculo.call(this, marca, modelo, conjuntoPneus)
+
+    this.totalPneus = function() {
+        const novaconjuntoPneus = this.getPneus() * 4
+        this.setPneus(novaconjuntoPneus)
+    }
 }
 
-function CartaoSemJuros (produto) {
-    Eletrônico.call(this, produto, 9000.00)
-    const novoPagamento = this.getPagamento() / 6
-    this.setPagamento(novoPagamento)
+//Herança
+function Moto(marca, modelo, conjuntoPneus) {
+    Veiculo.call(this, marca, modelo, conjuntoPneus)
+
+    this.totalPneus = function() {
+        const novaconjuntoPneus = this.getPneus() * 2
+        this.setPneus(novaconjuntoPneus)
+    }
 }
 
-function CartaoComJuros (produto) {
-    Eletrônico.call(this, produto, 6000.00)
-    const novoPagamento = (this.getPagamento() * 1.1) / 12
-    this.setPagamento(novoPagamento)
-}
+//Instancias
+const veiculo1 = new Carro("Hyundai", "HB20", 5)
+const veiculo2 = new Moto("Honda", "Shadow 750", 2)
+const veiculo3 = new Moto("Kawazaki", "Vulcan S", 4)
 
 
-const cliente1 = new AVista ("Iphone 13")
-const cliente2 = new CartaoSemJuros("Xiaomi 12T pro")
-const cliente3 = new CartaoComJuros("Galaxy S23")
-
-cliente1.formaPagamento()
-console.log(`\nÉ possível pagar seu ${cliente1.produto} à vista com 10% de desconto - R$${cliente1.getPagamento()}\n`)
-
-cliente2.formaPagamento()
-console.log(`\nÉ possível parcelar seu ${cliente2.produto} em até 6x sem Juros - 6x R$${cliente2.getPagamento()}\n`)
-
-cliente3.formaPagamento()
-console.log(`\nÉ possível parcelar seu ${cliente3.produto} em até 12x com Juros - 12x R$${cliente3.getPagamento()}\n`)
-
-
-
+veiculo1.totalPneus()
+veiculo2.totalPneus()
+veiculo3.totalPneus()
+console.log(`Levará ${veiculo1.getPneus()} pneus`)
+console.log(`Levará ${veiculo2.getPneus()} pneus`)
+console.log(`Levará ${veiculo3.getPneus()} pneus`)
