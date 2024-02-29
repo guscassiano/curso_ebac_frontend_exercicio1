@@ -5,11 +5,6 @@
 describe('Testes da agenda', ()=> {
     beforeEach(() => cy.visit('https://agenda-contatos-react.vercel.app/'))
 
-    it('Deletando o primeiro contato', ()=> {
-        cy.wait(2000)
-        cy.get('.sc-gueYoa > .delete').first().click()
-    })
-
     it('Incluindo um novo contato', ()=> {
         cy.get('input[type="text"]').type('Gustavo Cassiano')
         cy.get('input[type="email"]').type('guscassiano@gmail.com')
@@ -36,4 +31,8 @@ describe('Testes da agenda', ()=> {
         cy.get('.alterar').click()
     })
 
+    it('Deletando o primeiro contato', ()=> {
+        cy.wait(2000)
+        cy.get('.sc-gueYoa > .delete').first().click()
+    })
 })
